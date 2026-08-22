@@ -1,0 +1,11 @@
+flowchart LR
+ A[Official data + hash] --> B[Prepared identities]
+ B --> C[Support]
+ B --> D[Calibration]
+ B --> E[Untouched evaluation]
+ C --> F[Model]
+ D --> G[Calibration + threshold]
+ F --> H{Promotion policy}
+ G --> H
+ E --> H
+ H --> I[Hash-verified pointer]

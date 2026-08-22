@@ -1,0 +1,9 @@
+stages:
+  reproduce_fixture:
+    cmd: uv run python -m researchops.cli reproduce
+    deps:
+      - src/researchops
+      - uv.lock
+    outs:
+      - artifacts/runs/fixture-reference
+      - artifacts/registry/current.json
