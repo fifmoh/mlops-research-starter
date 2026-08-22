@@ -1,0 +1,53 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "researchops"
+version = "0.1.0"
+description = "Reproducible research orchestration and reference workload"
+requires-python = ">=3.11,<3.13"
+license = {text = "MIT"}
+dependencies = [
+  "pydantic==2.12.5",
+  "numpy==2.4.2",
+  "scikit-learn==1.8.0",
+  "fastapi==0.128.0",
+  "uvicorn==0.40.0",
+  "python-multipart==0.0.22",
+  "httpx==0.28.1",
+  "joblib==1.5.3",
+  "Pillow==12.1.0",
+  "mlflow==3.10.1",
+  "dvc==3.67.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "hypothesis==6.151.9",
+  "mypy==1.19.1",
+  "pytest==9.0.2",
+  "pytest-cov==7.0.0",
+  "ruff==0.15.1",
+  "types-PyYAML==6.0.12.20250915",
+  "cyclonedx-bom==7.2.2",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/researchops"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "RUF"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+packages = ["researchops"]
+
+[tool.pytest.ini_options]
+addopts = "-q --strict-markers"
+testpaths = ["tests"]
