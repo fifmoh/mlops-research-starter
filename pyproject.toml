@@ -14,7 +14,7 @@ dependencies = [
   "scikit-learn==1.8.0",
   "fastapi==0.128.0",
   "uvicorn==0.40.0",
-  "python-multipart==0.0.22",
+  "python-multipart==0.0.32",
   "httpx==0.28.1",
   "joblib==1.5.3",
   "Pillow==12.1.0",
