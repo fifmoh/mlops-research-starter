@@ -19,7 +19,7 @@ dependencies = [
   "joblib==1.5.3",
   "Pillow==12.1.0",
   "mlflow==3.10.1",
-  "dvc==3.67.0",
+  "dvc==3.67.1",
 ]
 
 [project.optional-dependencies]
